@@ -1,3 +1,9 @@
+#Goal
+
+O SetupMyProject foi criado para facilitar a criação de projetos Java baseados nas tecnologias mais famosas. Ele gera todo 
+o setup do projeto, incluindo configuração das dependências, classes necessárias etc. Caso você tenha usado e gostado, que 
+acha de me dar uma estrela :)? Caso queira colaborar, é mais que bem vindo!! Ainda preciso criar as issues :).
+
 #Para rodar o projeto, precisa ter o forge instalado. Siga os seguintes passos:
 
 	* Baixe o forge seguindo este link https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.13.0.Final&e=zip&c=offline  

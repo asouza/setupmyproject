@@ -1,4 +1,10 @@
-#Para rodar o projeto, precisa ter o forge instalado. Siga os seguintes passos:
+#Goal
+
+SetupMyProject was create because it is a little bit hard to setup Java Projects, at least for me. It generates your project
+based on the technology choosen and add all configurations that you need to run as soon as you download :). If you already used,
+what do you about give me a star :)? If you want to collaborate, just send a PR(I need to create the issues :P).
+
+#If you want to run the project locally, you need to install Jboss Forge. Follow these steps:
 
 	* Download forge, just follow this link https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.13.0.Final&e=zip&c=offline  
     * Rename application.properties.example to application.properties e aponte o seu diretorio de instalação/addons
@@ -6,7 +12,7 @@
 	* A new project will be created in the temp dir, the path will be returned.	
 	* Importe o projeto gerado como maven project :).
 	
-##Configuração de banco de dados
+##Database configuration
 
 You need to create a database called setupmyproject_dev. In relation to that, it is important that all controllers have the @Transactional annotation, you can use the javax package. This is important beacuse any step could access the database.
 
@@ -37,3 +43,7 @@ Each ProjectCommand has a method called getNameKey() and the return is used as k
 
 ##Names of ProjectType that the user can choose
 Basically it uses the getNameKey(). For the ProjectType, you must the Enum name directly in the properties.
+
+##Comments are still in portuguese
+
+All coments are written in portuguese. I still need to translate.
