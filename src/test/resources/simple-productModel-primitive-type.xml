@@ -1,0 +1,10 @@
+<models>
+	<model name="Product">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='java.lang.String' />		
+		<field name='price' type='java.math.BigDecimal' />		
+		<field name='pages' type='int' />		
+		<field name='released' type='boolean' />		
+		<field name='discount' type='double' />		
+	</model>
+</models>

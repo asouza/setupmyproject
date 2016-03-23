@@ -1,0 +1,13 @@
+<models>
+	<model name="Product">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='java.lang.String' />
+		<field name='price' type='java.math.BigDecimal' />
+		<field name='category' type='Category' javaType='false'
+			formInputType="select" formInputName='category.id' selectLabelField="name" />
+	</model>
+	<model name="Category">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='java.lang.String' />
+	</model>
+</models>

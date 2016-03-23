@@ -1,0 +1,22 @@
+package projectPackage.conf;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+	@Override
+	protected Class<?>[] getRootConfigClasses() {		
+		return new Class[]{${rootConfigurationClasses}};
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses() {		
+		return null;
+	}
+
+	@Override
+	protected String[] getServletMappings() {
+		return new String[] {"/"};
+	}
+
+}

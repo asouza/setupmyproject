@@ -1,0 +1,17 @@
+<models>
+	<model name="Product">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='java.lang.String' />
+		<field name='price' type='java.math.BigDecimal' />
+		<field name='author' type='Author' javaType='false' formInputType='select' formInputName='author.email'/>
+		<field name='category' type='Category' javaType='false' formInputType='select'/>
+	</model>
+	<model name="Author">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='String' />
+	</model>	
+	<model name="User">
+		<field name='login' type='java.lang.String' required='true' />
+		<field name='password' type='java.lang.String' />
+	</model>
+</models>

@@ -1,0 +1,11 @@
+<models>
+	<model name="Product">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='java.lang.String' />
+		<field name='author' type='Author' javaType='false' formInputType='select'/>
+	</model>
+	<model name="Author">
+		<field name='name' type='String' required='true' />
+		<field name='description' type='String' />
+	</model>
+</models>

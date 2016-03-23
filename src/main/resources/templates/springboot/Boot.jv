@@ -1,0 +1,15 @@
+package projectPackage;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+<#list imports as importLine>
+import ${importLine};	
+</#list>
+
+@SpringBootApplication
+public class Boot {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Boot.class, args);
+    }	
+}

@@ -1,0 +1,4 @@
+substitua aqui pelo seu caminho. Só tem um problema, o forge não funciona com o springloaded habilitade, tem alguma compatibilidade
+bizarra. Bytecode manipulado maldito..
+
+-javaagent:/Users/alberto/ambiente/desenvolvimento/springtools/setupmyproject/springloaded/springloaded-1.2.3.RELEASE.jar -noverify

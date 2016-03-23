@@ -1,0 +1,8 @@
+<models>
+	<model name="Product">
+		<field name='name' type='java.lang.String' required='true' />
+		<field name='description' type='java.lang.String' />		
+		<field name='price' type='java.math.BigDecimal' />		
+		<field name='intField' type='int' />		
+	</model>
+</models>

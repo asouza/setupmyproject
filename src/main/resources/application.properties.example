@@ -1,0 +1,30 @@
+#spring boot properties
+#Sat Aug 29 16:27:02 BRT 2015
+spring.profiles.active=homolog
+#só coloca o caminho a partir do seu usuário. 
+forge.path = ambiente/forge/forge-distribution-2.13.0.Final/addons
+
+#paypal
+paypal.env=sandbox
+paypal.merchant_id=alots.ssa-facilitator@gmail.com
+paypal.receiver_email=seller@paypalsandbox.com
+paypal.currency=BRL
+
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=
+spring.datasource.url=jdbc:mysql://localhost/setupmyproject_dev?createDatabaseIfNotExist=true&autoReconnect=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# INTERNATIONALIZATION (MessageSourceAutoConfiguration)
+spring.messages.basename=messages
+spring.messages.cache-seconds=1
+spring.messages.encoding=UTF-8
+
+email.login=error@setupmyproject.com
+email.password=
+email.errorTo=to@gmail.com
+email.from=error@setupmyproject.com
+
+

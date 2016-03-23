@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies>
+	<dependency>
+		<groupId>org.apache.deltaspike.core</groupId>
+		<artifactId>deltaspike-core-api</artifactId>
+		<version>1.5.0</version>
+		<scope>compile</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.deltaspike.core</groupId>
+		<artifactId>deltaspike-core-impl</artifactId>
+		<version>1.5.0</version>
+		<scope>runtime</scope>
+	</dependency>
+</dependencies>	

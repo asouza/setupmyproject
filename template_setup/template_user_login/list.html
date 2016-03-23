@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+  <!-- style -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+  
+  <!-- INICIO NAV (alterar pra include)-->
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Project Name</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="menu">
+
+        <ul class="nav navbar-nav">
+          <li><a href="add_edit.html"><span class="glyphicon glyphicon-plus-sign"></span> Add User</a></li>
+          <li class="active"><a href="list.html"><span class="glyphicon glyphicon-menu-hamburger"></span> List User</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> User-Name <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="add_edit.html"><span class="glyphicon glyphicon-cog"></span> Edit profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FINAL NAV -->
+
+  <div>
+    <div class ="container min-container">
+      <h2 class="basic-title">List Users</h2>
+        <div class="well">
+          <table class="table table-condensed table-bordered table-striped table-hover">
+              <tbody>
+                  <tr><td><a href="">User1</a><span class="actions">
+                    <a href="" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+                  </span></td></tr>
+                  <tr><td><a href="">User2</a><span class="actions">
+                    <a href="" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+                  </span></td></tr>
+                  <tr><td><a href="">User3</a><span class="actions">
+                    <a href="" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a href="" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+                  </span></td></tr>
+              </tbody>
+          </table>
+          <a href="" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New User</a>
+        </div>
+    </div>
+  </div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

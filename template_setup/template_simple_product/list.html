@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+  <!-- style -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+  
+  <!-- INICIO NAV (alterar pra include)-->
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Project Name</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="add_edit.html"><span class="glyphicon glyphicon-plus-sign"></span> Add product</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="list.html"><span class="glyphicon glyphicon-menu-hamburger"></span> List products</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+  <!-- FINAL NAV -->
+
+  <div>
+    <div class ="container min-container">
+      <h2 class="basic-title">List Products</h2>
+        <div class="well">
+          <table class="table table-condensed table-bordered table-striped table-hover">
+          		  <thead>
+                  <tr>
+                  	<td><a href="">Coluna1</a></td>
+                  	<td><a href="">Coluna2</a></td>
+                  	<td><a href="">Coluna3</a></td>
+                  </tr>
+                  </thead>
+                  <tbody>          		
+                  <tr>
+                  	<td><a href="">Product1</a></td>
+                  	<td><a href="">Product1</a></td>
+                  	<td><a href="">Product1</a></td>
+                  </tr>
+                  <tr>
+                  	<td><a href="">Product1</a></td>
+                  	<td><a href="">Product1</a></td>
+                  	<td><a href="">Product1</a></td>
+                  </tr>
+                  <tr>
+                  	<td><a href="">Product1</a></td>
+                  	<td><a href="">Product1</a></td>
+                  	<td><a href="">Product1</a></td>
+                  </tr>
+                  </tbody>
+          </table>
+          <a href="add_edit.html" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New Product</a>
+        </div>
+    </div>
+  </div>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

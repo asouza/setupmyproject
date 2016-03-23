@@ -1,0 +1,1 @@
+select sum(duplicatedPrice),day(creationDate),month(creationDate),year(creationDate),count(id) from Payment group by day(creationDate),month(creationDate),year(creationDate);

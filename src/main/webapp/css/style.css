@@ -1,0 +1,522 @@
+html {
+	background-color: #282b34;
+}
+
+}
+body, input, textarea, select {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #4c4c4c;
+}
+
+p {
+	font-size: 12px;
+	/*width: 150px;*/
+	display: inline-block;
+	margin: 5px;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 300;
+	color: #4c4c4c;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+h2 {
+	margin: 5px 0;
+}
+
+h3 {
+	margin: 10px 0 10px 65px;
+	font-size: 1.3em;
+}
+
+.backButton {
+	float: left;
+}
+
+.nextButton {
+	float: right;
+}
+
+.wizard {
+	display: flex;
+	position: relative;
+	margin: 0px auto;
+	padding: 10px;
+	max-width: 900px;
+	/* border: solid 1px #cbc9c9; */
+	background-color: #fff;
+	min-height: 310px;
+}
+
+.wizard a:link,
+.wizard a:visited {
+	color:blue;
+	margin-bottom: 0.5em;
+	margin-top: 1em;
+	display: block;
+}
+
+.wizard a .fa{
+	color:#282b34;
+	margin-left: 10px;
+}
+
+.wizard-comtainer {
+	padding: 20px 0;
+	background: #BF0410;
+}
+
+.formBox {
+	float: left;
+	width: 65%;
+	height: auto;
+}
+
+.resume {
+	width: 35%;
+	float: right;
+	border-left: solid 1px #cbc9c9;
+}
+
+.resume h2 {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.resume ul {
+	margin: 0;
+	padding: 20px 10px;
+}
+
+.resume li {
+	list-style-type: none;
+	border-bottom: solid 1px #eeeeec;
+	padding: 3px 0;
+	font-size: 14px;
+}
+
+.resume .item-list-price {
+	float: right;
+	m font-weight: bold;
+}
+
+.next-wizard {
+	background-color: #3465a4;
+	color: #fff;
+	border: none;
+	font-weight: bold;
+}
+
+.next-wizard i {
+	background-color: #ccc;
+}
+
+.next-wizard {
+	
+}
+
+.resume footer {
+	position: absolute;
+	bottom: 0;
+	width: 35%;
+}
+
+.resume footer h2 {
+	text-align: center;
+}
+
+footer {
+	margin: 20px auto;
+	width: 600px;
+}
+
+.wizardPass {
+	margin: 0 auto;
+}
+
+.wizardPass li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 10px;
+	color: #fff;
+}
+
+.passChecked {
+	background: #52c137;
+}
+
+.passNotChecked {
+	background: #ff7600;
+	opacity: .5;
+}
+
+.passActive {
+	background: #004eff;
+}
+
+hr {
+	color: #a9a9a9;
+	opacity: 0.3;
+}
+
+form {
+	margin: 0 30px;
+	/* min-height: 200px; */
+}
+
+input[type=radio], input[type=checkbox] {
+	visibility: hidden;
+	display: none;
+}
+
+input[type="checkbox"]+label, input[type="radio"]+label {
+	cursor: pointer;
+	text-indent: 35px;
+	overflow: visible;
+	display: inline-block;
+	position: relative;
+	margin-bottom: 5px;
+	width: 90%;
+}
+
+input[type="checkbox"]+label:after, input[type="radio"]+label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 0.5em;
+	height: 0.25em;
+	background: transparent;
+	top: 7.5px;
+	left: 4.5px;
+	border: 3px solid #ffffff;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+input[type="checkbox"]+label:before {
+	background: #4F8E3A;
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 10%;
+}
+
+input[type="radio"]+label:before {
+	background: #4F8E3A;
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+}
+
+input[type=radio]:checked+label:after {
+	opacity: 1;
+}
+
+input[type=checkbox]:checked+label:after {
+	opacity: 1;
+}
+
+input[type=text], input[type=password] {
+	width: calc(100% - 90px);
+	height: 39px;
+	-webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+	-moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
+	border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+	background-color: #fff;
+	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+	border: solid 1px #cbc9c9;
+	margin-left: -5px;
+	margin-top: 13px;
+	padding-left: 10px;
+}
+
+input[type=password] {
+	margin-bottom: 25px;
+}
+
+input[type=submit] {
+	margin: 20px 0;
+	padding: 10px 20px;
+	width: 100%;
+}
+
+#icon {
+	display: inline-block;
+	width: 30px;
+	background-color: #4F8E3A;
+	padding: 8px 0px 8px 15px;
+	margin-left: 15px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	border-radius: 4px 0px 0px 4px;
+	color: white;
+	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+}
+
+.radio-group {
+	margin-left: 8px;
+	margin-top: 0px;
+}
+
+a.button {
+	font-size: 14px;
+	font-weight: 600;
+	color: white;
+	padding: 6px 25px 0px 20px;
+	margin: 10px 8px 20px 0px;
+	display: inline-block;
+	float: right;
+	text-decoration: none;
+	width: 50px;
+	height: 27px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #4F8E3A;
+	-webkit-box-shadow: 0 3px rgba(58, 87, 175, .75);
+	-moz-box-shadow: 0 3px rgba(58, 87, 175, .75);
+	box-shadow: 0 3px rgba(58, 87, 175, .75);
+	transition: all 0.1s linear 0s;
+	top: 0px;
+	position: relative;
+}
+
+a.button:hover {
+	top: 3px;
+	background-color: #2e458b;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+/*********************** tooltip ***********************/
+.tooltip {
+	position: relative;
+	float: right;
+}
+
+.tooltip:hover:after {
+	background-color: #000000; /* for old browsers */
+	background-color: rgba(0, 0, 0, 0.85);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	bottom: 30px;
+	color: #FFFFFF;
+	content: attr(data-tooltip);
+	right: -15px;
+	padding: 5px 10px;
+	position: absolute;
+	width: 300px;
+	z-index: 1000;
+}
+
+.tooltip:hover:before {
+	border: solid;
+	border-color: rgba(0, 0, 0, 0.85) transparent;
+	border-width: 8px 8px 0 8px;
+	bottom: 100%;
+	left: -9%;
+	content: "";
+	position: absolute;
+	z-index: 1001;
+}
+
+
+
+.valorfinal {
+	margin: 10px auto;
+	text-align: center;
+	display: block;
+}
+
+.titledownload {
+	margin: 30px 0;
+	text-align: center;
+}
+
+#copyright {
+	padding: 20px;
+	text-align: center;
+	display: inline-block;
+	border-radius: 0.35em;
+	box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.05);
+	color: #aaa;
+	color: rgba(255, 255, 255, 0.25);
+	width: 95%;
+	margin: 0 auto;
+}
+
+.menu-footer {
+	width: 100%;
+}
+
+.menu-footer ul {
+	display: table;
+	margin: 10px auto;
+}
+
+.menu-footer li {
+	list-style-type: none;
+	display: inline-block;
+	color: #fff;
+	padding: 20px;
+	background-color: #4F8E3A;
+	margin: 0 5px;
+}
+
+.simple-link {
+	color: blue !important;
+}
+
+a:link {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:active {
+	color: #fff;
+	text-decoration: none;
+}
+	
+a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* download */
+
+.download-button {
+	color: #fff;
+	background-color: #4F8E3A;
+	padding: 10px;
+	margin: 20px 40px;
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.text-wait{
+	text-align: center;
+	font-size: 14px;
+	width: 100%;
+	color: #888a85;
+}
+
+.paypal-button button.large {
+	min-width: 150px;
+}
+
+.paypal-label {
+	margin-left: 30px;
+}
+
+.paypal-input {
+	margin: 0 20px !important;
+	width: 100px !important;
+	height: 25px !important;
+	border-radius: 5px !important;
+	text-align: center !important;
+}
+
+.paypal-button {
+	min-height: 40px;
+}
+
+.textPay {
+	text-align: center;
+	margin: 10px 50px;
+	font-size: 13px;
+	display: block;
+}
+#usd-button form ,
+#brl-button form {
+	margin: 0;
+}
+
+#usd-button img,
+#brl-button img {
+	margin: 20px auto 0 auto;
+	display: block;
+}
+
+.validation-error {
+	color : rgb(228, 67, 67);
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.formPayment {
+	margin: 1em auto;
+	display: block;
+	text-align: center;	
+	display: flex;
+	justify-content:space-around;
+	align-items:center;
+	padding: 1em;
+		
+}
+
+.formPayment-label {	
+	margin-right: 1em;
+}
+
+.formPayment-input {
+	padding: 0.5em 1em;	
+	margin-left: .2em;
+}
+
+input[type=submit].formPayment-downloadButton {
+	display: inline-block;
+	width: auto;
+	flex:1;
+	margin-left: 1em;
+}

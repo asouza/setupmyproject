@@ -1,0 +1,15 @@
+.min-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.basic-title {
+  text-align: center;
+}
+
+.actions {
+  float: right;
+}
+
+.actions > span {
+  margin-left: 5px;
+}

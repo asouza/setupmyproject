@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="model" type="crudModel"/>
+
+  <xs:element name="models" type="crudModels"/>
+
+  <xs:complexType name="crudModels">
+    <xs:sequence>
+      <xs:element ref="model" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crudModel">
+    <xs:sequence>
+      <xs:element name="field" type="crudField" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="viewController" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="crudField">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="type" type="xs:string" use="required"/>
+    <xs:attribute name="javaType" type="xs:boolean"/>
+    <xs:attribute name="formInputType" type="crudFormInputType"/>
+    <xs:attribute name="formInputName" type="xs:string"/>
+    <xs:attribute name="selectLabelField" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:simpleType name="crudFormInputType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="select"/>
+      <xs:enumeration value="text"/>
+      <xs:enumeration value="decimal"/>
+      <xs:enumeration value="date"/>
+      <xs:enumeration value="email"/>
+      <xs:enumeration value="password"/>
+      <xs:enumeration value="textarea"/>
+      <xs:enumeration value="radioButton"/>
+      <xs:enumeration value="checkbox"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
