@@ -12,7 +12,7 @@ jsonData.txt
 output.txt
 inserts-security.txt
 application.properties
-homolog.properties
-production.properties
+application-homolog.properties
+application-production.properties
 sprinloaded.param
 *.sh
