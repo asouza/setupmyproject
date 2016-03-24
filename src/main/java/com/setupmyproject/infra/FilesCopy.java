@@ -35,10 +35,4 @@ public class FilesCopy extends SimpleFileVisitor<Path>{
 		Files.copy(entry, novoDiretorio);
 	}
 	
-	public static void main(String[] args) throws IOException {
-		Path origem = Paths.get("/Users/alberto/ambiente/desenvolvimento/springtools/setupmyproject/src/main/resources/templates/cruds/assets");
-		Path destino = Paths.get("/Users/alberto/ambiente/desenvolvimento/springtools/setupmyproject/template_setup/assets-copy");
-		Files.walkFileTree(origem, new FilesCopy(origem, destino));		
-	}
-
 }
