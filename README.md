@@ -2,7 +2,7 @@
 
 SetupMyProject was create because it is a little bit hard to setup Java Projects, at least for me. It generates your project
 based on the technology choosen and add all configurations that you need to run as soon as you download :). If you already used,
-what do you about give me a star :)? If you want to collaborate, just send a PR(I need to create the issues :P).
+what do you think about give it a star :)? If you want to collaborate, just send a PR(I need to create issues :P).
 
 #If you want to run the project locally, you need to install Jboss Forge. Follow these steps:
 
