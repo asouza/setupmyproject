@@ -1,58 +1,49 @@
 #Goal
 
-O SetupMyProject foi criado para facilitar a criação de projetos Java baseados nas tecnologias mais famosas. Ele gera todo 
-o setup do projeto, incluindo configuração das dependências, classes necessárias etc. Caso você tenha usado e gostado, que 
-acha de me dar uma estrela :)? Caso queira colaborar, é mais que bem vindo!! Ainda preciso criar as issues :).
+SetupMyProject was create because it is a little bit hard to setup Java Projects, at least for me. It generates your project
+based on the technology choosen and add all configurations that you need to run as soon as you download :). If you already used,
+what do you about give me a star :)? If you want to collaborate, just send a PR(I need to create the issues :P).
 
-#Para rodar o projeto, precisa ter o forge instalado. Siga os seguintes passos:
+#If you want to run the project locally, you need to install Jboss Forge. Follow these steps:
 
-	* Baixe o forge seguindo este link https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.13.0.Final&e=zip&c=offline  
-    * Renomeie o dev.properties.example para dev.properties e aponte o seu diretorio de instalação/addons
-    * Para verificar se a integração com o forge está funcionando, rode a classe ForgeStandaloneTest
-	* Atualmente ele está criando o projeto em um dir temporário, de todo jeito é retornado o endereço.	
+	* Download forge, just follow this link https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.13.0.Final&e=zip&c=offline  
+    * Rename application.properties.example to application.properties e aponte o seu diretorio de instalação/addons
+    * In order to verify if forge is working as expected, just execute the ForgeStandaloneTest class.
+	* A new project will be created in the temp dir, the path will be returned.	
 	* Importe o projeto gerado como maven project :).
 	
-##Configuração de banco de dados
+##Database configuration
 
-É necessário que seja criado um banco, no mysql, chamado setupmyproject_dev. Ainda em relação a isso, é importante que todos
-os controllers tenham o @Transactional em cima, do javax mesmo. Já que qualquer passo pode precisar de acesso ao banco de 
-dados.
+You need to create a database called setupmyproject_dev. In relation to that, it is important that all controllers have the @Transactional annotation, you can use the javax package. This is important beacuse any step could access the database.
 
-##Para criar uma nova sequência de comandos
+##Do you want to create a new sequence of steps?
 
-###A classe ProjectType
+###The ProjectType class
 
-É uma enum que contém os tipos de projetos possíveis até o momento. Dê uma olhada nela para ver como foi configurada a
-sequência de passos até chegar ao fim do wizard.
+It is a enum that has all kind of projects that user can create, at least until now. Take a look and analyze how it is configured the sequence of steps, from the beginning until the end of the wizard.
 
-###A interface ProjectCommand e CommandGenerator
+###ProjectCommand and CommandGenerator interfaces
 
-A primeira é a interface necessária para você criar um comando. Dê uma olhada nas implementações para gerar comandos para
-o projeto usando o Spring MVC. O CommandGenerator é necessário para, provavelmente a partir do seu formulário, vc gerar o 
-ProjectCommand necessário. Dê uma olhada nos formulários no pacote controllers.form.
+ProjectCommand is the interface you need to implement to create a new Command. Take a look in the implementations of commands to generate a Spring MVC project. The CommandGenerator is necessary because, probably, from your form will need to generate a new Command. Take a look in the **com.setupmyproject.controllers.forms** package.
 
-###Os controllers para os passos do wizard
+###The controllers for the wizard steps
 
-Caso você tenha que adicionar validação, dê uma olhada na classe MavenSetupController. Se não for preciso validação, dê uma
-olhada na classe DBSetupController.
+If you need some sort of validation, take a look in the MavenSetupController class. If you don't need, take a look in DBSetupController.
 
-##Testando o wizard em ambiente de dev/homolog(podemos melhorar)
+##Testing the wizard in dev/homolog environment
 
-Não é necessário criar todo fluxo de pagamento em dev. Ele vai já mostrar o botão de download automaticamente quando estivermos
-em dev. 
+To acess the downloads page, access RequestedSetup table, choose a token and acess http://localhost:8080/downloads/index?token=tokenGeradoNoBancoDeDados.
 
-Para acessar a página de download, vá na tabela de RequestedSetup, pegue um token e acesse http://localhost:8080/setupmyproject/downloads/index?token=tokenGeradoNoBancoDeDados.
+##Facets of Jboss Forge
 
-Para ver o botão de pagamento em homolog, basta que vc troque de dev para homolog na classe ServletSpringMVC
+In your ProjectType, you can provide all the facets that will be needed to execute your command.
 
-##Facets do forge necessárias
+##Menu with commands in the view
+Each ProjectCommand has a method called getNameKey() and the return is used as key in your pages. Did you create a new command? Give a name to it! There is a default implementation in the interface, that uses your class name as part of the Command name key. When the ProjectCommand is a Enum, you must override the getNameKey().
 
-OS tipos de projetos diferentes podem precisar de facets não instaladas por default. Por conta disso, no próprio ProjectType
-você tem a chance de disponibilizar os facets necessários.
+##Names of ProjectType that the user can choose
+Basically it uses the getNameKey(). For the ProjectType, you must the Enum name directly in the properties.
 
-##Menu com comandos adicionados na view
-Cada ProjectCommand tem um método que chama getNameKey() e o mesmo é usado como chave nas views. Criou um comando novo? Já dê um
-nome para ele! Quando o ProjectCommand é uma Enum, tem que sobreescrever o método getNameKey(), não sei o motivo.
+##Comments are still in portuguese
 
-##Nomes das opções para o usuário escolher
-Basicamente usa o getNameKey(). No caso dos ProjectType, tem que adicionar o nome da enum diretamente no properties.
+All coments are written in portuguese. I still need to translate.
