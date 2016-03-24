@@ -56,11 +56,3 @@ nome para ele! Quando o ProjectCommand é uma Enum, tem que sobreescrever o mét
 
 ##Nomes das opções para o usuário escolher
 Basicamente usa o getNameKey(). No caso dos ProjectType, tem que adicionar o nome da enum diretamente no properties.
-
-##Simulando produção
-
-Para simular a compra, basta subir a app em ambiente de homologação. Para realizar a compra no ambiente da sanbox, pode
-usar o usas as seguintes opções de login
-
-* user = teste2345@gmail.com, senha = teste2345 (norte americano)
-* user = alots.ssa-buyer@gmail.com, senha = testeteste (brasileiro)
