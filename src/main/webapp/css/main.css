@@ -1579,6 +1579,10 @@
 				color: #fff;
 			}
 
+			.wrapper.style1 a {
+				text-decoration: none;
+			}
+
 		.wrapper.style2 {
 			background: #fff;
 		}
@@ -1587,7 +1591,7 @@
 				background: #fff;
 				color: #484d55;
 			}
-
+			
 		.wrapper.style3 {
 			background: #f3f3f3 url("images/overlay.png");
 		}
@@ -2152,6 +2156,73 @@
 				margin: 0 0 0.75em 0;
 				font-size: 1.15em;
 				letter-spacing: 0.05em;
+			}
+
+		/* Authors */
+
+			#authors > div.row {
+				margin: 0 !important;
+				padding: 0 4em;
+			}
+
+			#authors div.2u {
+				padding-top: 0;
+			}
+
+			#authors > div > div {
+				margin-bottom: 3em;
+			}
+
+			#authors > div > div:last-child {
+				margin-bottom: 0;
+			}
+
+			#authors > div > div:nth-child(n+2) {
+				border-top: 1px solid #EEE;
+			}
+
+			div.left {
+				float: left;
+				margin: 0 2em 0 0;
+			}
+
+			.author-image, .book-image {
+				border: 5px solid rgba(255, 255, 255, 0.2);
+			}
+
+			.author-image {
+				height: 200px;
+				width: 200px;
+			}
+
+			.book-image {
+				height: 50%;
+				width: 50%;
+			}
+
+			.links-list li {
+				display: inline-block;
+			}
+
+			.links-list img {
+				height: 30px;
+				width: 30px;
+			}
+
+			.links-list li:first-child {
+				margin-right: 0.25em;
+			}
+
+			.links-list li:nth-child(n+2) {
+				margin: 0 0.25em;
+			}
+
+			.links-list li:last-child {
+				margin-left: 0.25em;
+			}
+
+			#authors figure {
+				text-align: center;
 			}
 
 		/* Main */

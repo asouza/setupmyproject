@@ -161,6 +161,52 @@
 					</div>
 				</div>
 
+				<div class="wrapper style1">
+					<div class="title">About the developers</div>
+					<div id="authors" class="container">
+						<div class="row">
+							<div class="12u">
+								<section class="author">
+									<div class="left">
+										<img class="image author-image" src="images/alberto.jpg" alt=""/>
+										<div class="authors-social-links">
+											<ul class="links-list">
+												<li><a class="social-link" href="https://twitter.com/alberto_souza"><img src="images/social/twitter.png" alt="Twitter" /></a></li>
+												<li><a class="social-link" href="https://github.com/asouza"><img src="images/social/github.svg" alt="Github" /></a></li>
+												<li><a class="social-link" href="https://domineospring.wordpress.com/"><img src="images/social/wordpress.png" alt="Blog" /></a></li>
+											</ul>
+										</div>
+									</div>
+									<h3>Alberto Souza</h3>
+									<p>A description about Alberto's works and achievements.</p>
+								</section>
+								<div class="row">
+									<div class="2u">
+										<section>
+											<a href="https://www.casadocodigo.com.br/products/livro-spring-mvc">
+												<figure>
+													<img class="image book-image" src="images/spring-book.png" alt=""/>
+													<figcaption>Spring MVC</figcaption>
+												</figure>
+											</a>
+										</section>
+									</div>
+									<div class="2u">
+										<section>
+											<a href="https://www.casadocodigo.com.br/products/livro-javaee">
+												<figure>
+													<img class="image book-image" src="images/javaee-book.jpeg" alt=""/>
+													<figcaption>Java EE</figcaption>
+												</figure>
+											</a>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			<!-- Footer -->
 				<div id="footer-wrapper" class="wrapper">
 					<div class="title">customize</div>
