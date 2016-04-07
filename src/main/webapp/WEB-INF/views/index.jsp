@@ -178,12 +178,12 @@
 										</div>
 									</div>
 									<h3>Alberto Souza</h3>
-									<p>A description about Alberto's works and achievements.</p>
+									<p>Alberto is the core commiter of SetupMyProject. He is also a blogger and book writer :). He works at <a href="http://www.caelum.com.br" target="blank">Caelum</a> as teacher and developer.</p>
 								</section>
 								<div class="row">
 									<div class="2u">
 										<section>
-											<a href="https://www.casadocodigo.com.br/products/livro-spring-mvc">
+											<a href="https://www.casadocodigo.com.br/products/livro-spring-mvc" target="blank">
 												<figure>
 													<img class="image book-image" src="images/spring-book.png" alt=""/>
 													<figcaption>Spring MVC</figcaption>
@@ -193,7 +193,7 @@
 									</div>
 									<div class="2u">
 										<section>
-											<a href="https://www.casadocodigo.com.br/products/livro-javaee">
+											<a href="https://www.casadocodigo.com.br/products/livro-javaee" target="blank">
 												<figure>
 													<img class="image book-image" src="images/javaee-book.jpeg" alt=""/>
 													<figcaption>Java EE</figcaption>
