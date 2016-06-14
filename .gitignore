@@ -16,3 +16,4 @@ application-homolog.properties
 application-production.properties
 sprinloaded.param
 *.sh
+springlint-result.html
