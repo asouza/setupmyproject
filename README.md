@@ -7,10 +7,10 @@ what do you think about give it a star :)? If you want to collaborate, just send
 #If you want to run the project locally, you need to install Jboss Forge. Follow these steps:
 
 	* Download forge, just follow this link https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=2.13.0.Final&e=zip&c=offline  
-    * Rename application.properties.example to application.properties e aponte o seu diretorio de instalação/addons
+    * Rename application.properties.example to application.properties and set your installation/addons dir.
     * In order to verify if forge is working as expected, just execute the ForgeStandaloneTest class.
 	* A new project will be created in the temp dir, the path will be returned.	
-	* Importe o projeto gerado como maven project :).
+	* Import the generated project as a maven one :).
 	
 ##Database configuration
 
