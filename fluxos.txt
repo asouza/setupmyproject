@@ -1,7 +1,0 @@
-escolhe o tipo de projeto
-	- JSF ou Spring
-
-caso tenha ido pelo spring
-	- escolhe a view
-		
-	
