@@ -39,7 +39,7 @@ public class SpringMVCBasicSetupCommand implements ProjectCommand {
 	private static final String templateHomeController = "/templates/springmvc/HomeController.jv";
 	private static final String templateAppWebConfiguration = "/templates/springmvc/AppWebConfiguration.jv";
 	private static final String templateSpringMVCServlet = "/templates/springmvc/SpringMVCServlet.jv";
-	public final static String spring_version = "4.1.0.RELEASE";
+	public final static String spring_version = "4.3.5.RELEASE";
 	private Logger logger = LoggerFactory
 			.getLogger(SpringMVCBasicSetupCommand.class);
 	private Set<String> appWebConfigurationImports = new HashSet<>();
@@ -107,19 +107,19 @@ public class SpringMVCBasicSetupCommand implements ProjectCommand {
 				.setExcludedCoordinates(Arrays.asList(excludeOldServletApi)));
 
 		deps.add(DependencyBuilder.create().setGroupId("org.slf4j")
-				.setArtifactId("slf4j-api").setVersion("1.6.1")
+				.setArtifactId("slf4j-api").setVersion("1.7.25")
 				.setScopeType("compile"));
 
 		deps.add(DependencyBuilder.create().setGroupId("org.slf4j")
-				.setArtifactId("jcl-over-slf4j").setVersion("1.6.1")
+				.setArtifactId("jcl-over-slf4j").setVersion("1.7.25")
 				.setScopeType("runtime"));
 
 		deps.add(DependencyBuilder.create().setGroupId("org.slf4j")
-				.setArtifactId("slf4j-log4j12").setVersion("1.6.1")
+				.setArtifactId("slf4j-log4j12").setVersion("1.7.25")
 				.setScopeType("runtime"));
 
-		deps.add(DependencyBuilder.create().setGroupId("log4j")
-				.setArtifactId("log4j").setVersion("1.2.16")
+		deps.add(DependencyBuilder.create().setGroupId("org.apache.logging.log4j")
+				.setArtifactId("log4j-core").setVersion("2.8.2")
 				.setScopeType("runtime"));
 		return deps;
 	}
