@@ -8,7 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,7 +30,7 @@ public class ${currentCrudModel.getControllerName()} {
 	private ${relatedCrudModel.getDaoName()} ${relatedCrudModel.getDaoVariableName()};
 	</#list>	
 
-	@RequestMapping("/form")
+	@GetMapping("/form")
 	public ModelAndView form(${currentCrudModel.getName()} ${currentCrudModel.getClassNameAsProperty()}){
 		ModelAndView modelAndView = new ModelAndView("${currentCrudModel.getModuleName()}/form-add");
 		<#if !(relatedCrudModels.isEmpty())>
@@ -50,7 +51,7 @@ public class ${currentCrudModel.getControllerName()} {
 	}
 	</#if>
 	
-	@RequestMapping(method=RequestMethod.POST)
+	@PostMapping
 	public ModelAndView save(@Valid ${currentCrudModel.getName()} ${currentCrudModel.getClassNameAsProperty()},BindingResult bindingResult){
 		if(bindingResult.hasErrors()){
 			return form(${currentCrudModel.getClassNameAsProperty()});
@@ -59,7 +60,7 @@ public class ${currentCrudModel.getControllerName()} {
 		return new ModelAndView("redirect:${currentCrudModel.getListAction()}");
 	}
 	
-	@RequestMapping(method=RequestMethod.GET,value="/{id}")
+	@GetMapping("/{id}")
 	public ModelAndView load(@PathVariable("id") Integer id){
 		ModelAndView modelAndView = new ModelAndView("${currentCrudModel.getModuleName()}/form-update");
 		modelAndView.addObject("${currentCrudModel.getClassNameAsProperty()}", ${currentCrudModel.getDaoVariableName()}.findById(id));
@@ -69,7 +70,7 @@ public class ${currentCrudModel.getControllerName()} {
 		return modelAndView;
 	}
 	
-	@RequestMapping(method=RequestMethod.GET)
+	@GetMapping
 	public ModelAndView list(@RequestParam(defaultValue="0",required=false) int page){
 		ModelAndView modelAndView = new ModelAndView("${currentCrudModel.getModuleName()}/list");
 		modelAndView.addObject("paginatedList", ${currentCrudModel.getDaoVariableName()}.paginated(page,10));
@@ -77,14 +78,14 @@ public class ${currentCrudModel.getControllerName()} {
 	}
 	
 	//just because get is easier here. Be my guest if you want to change.
-	@RequestMapping(method=RequestMethod.GET,value="/remove/{id}")
+	@GetMapping("/remove/{id}")
 	public String remove(@PathVariable("id") Integer id){
 		${currentCrudModel.getName()} ${currentCrudModel.getClassNameAsProperty()} = ${currentCrudModel.getDaoVariableName()}.findById(id);
 		${currentCrudModel.getDaoVariableName()}.remove(${currentCrudModel.getClassNameAsProperty()});
 		return "redirect:${currentCrudModel.getListAction()}";
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/{id}")
+	@PostMapping("/{id}")
 	public ModelAndView update(@PathVariable("id") Integer id,@Valid ${currentCrudModel.getName()} ${currentCrudModel.getClassNameAsProperty()}, BindingResult bindingResult) {
 		${currentCrudModel.getClassNameAsProperty()}.setId(id);
 		if (bindingResult.hasErrors()) {
