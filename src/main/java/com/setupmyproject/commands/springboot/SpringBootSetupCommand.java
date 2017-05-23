@@ -35,7 +35,7 @@ import com.setupmyproject.models.MavenDepencies;
 
 public class SpringBootSetupCommand implements ProjectCommand {
 
-	public static final String BOOT_VERSION = "1.3.1.RELEASE";
+	public static final String BOOT_VERSION = "1.5.3.RELEASE";
 	private Logger logger = LoggerFactory
 			.getLogger(SpringBootSetupCommand.class);
 	private boolean hasJsp = false;
@@ -58,7 +58,6 @@ public class SpringBootSetupCommand implements ProjectCommand {
 		ForgeHelper forgeHelper = new ForgeHelper(project, addonRegistry);
 		configureDependencies(forgeHelper);
 		configurePlugins(forgeHelper);
-		configureDepsRepos(forgeHelper);
 		configureParent(forgeHelper);
 		createBootClass(forgeHelper, commandGenerators);
 		try {
@@ -94,7 +93,7 @@ public class SpringBootSetupCommand implements ProjectCommand {
 		ArrayList<String> imports = new ArrayList<String>();
 		//FIXME fiz esse código porque o addImport pelo addImport não tava rolando
 		if(!hasJsp){
-			imports.add("org.springframework.web.bind.annotation.RequestMapping");
+			imports.add("org.springframework.web.bind.annotation.GetMapping");
 			imports.add("org.springframework.web.bind.annotation.ResponseBody");
 			imports.add("org.springframework.stereotype.Controller");
 		}
@@ -109,7 +108,7 @@ public class SpringBootSetupCommand implements ProjectCommand {
 
 	private void addIndexResponseBodyIndexMethod(JavaClassSource javaSource) {
 		javaSource.addAnnotation("org.springframework.stereotype.Controller");
-		String indexMethod = new StringBuilder().append("@RequestMapping(\"/\")\n")
+		String indexMethod = new StringBuilder().append("@GetMapping(\"/\")\n")
 				.append("@ResponseBody\n")
 				.append("public String home() {")
 				.append("return \"home\";\n")
@@ -130,22 +129,10 @@ public class SpringBootSetupCommand implements ProjectCommand {
 		maven.setModel(pom);
 	}
 
-	private void configureDepsRepos(ForgeHelper forgeHelper) {
-		MavenDependencyFacet facet = forgeHelper.getProject().getFacet(
-				MavenDependencyFacet.class);
-		facet.addRepository("spring-snapshots",
-				"http://repo.spring.io/snapshot");
-		facet.addRepository("spring-milestones",
-				"http://repo.spring.io/milestone");
-	}
 
 	private void configurePlugins(ForgeHelper forgeHelper) {
 		MavenPluginFacet facet = forgeHelper.getProject().getFacet(
 				MavenPluginFacet.class);
-		facet.addPluginRepository("spring-snapshots",
-				"http://repo.spring.io/snapshot");
-		facet.addPluginRepository("spring-milestones",
-				"http://repo.spring.io/milestone");
 		MavenPluginBuilder plugin = MavenPluginBuilder.create();
 		plugin.setCoordinate(CoordinateBuilder
 				.create("org.springframework.boot:spring-boot-maven-plugin"));
