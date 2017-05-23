@@ -51,7 +51,7 @@ public class SpringBootJSPCommand {
 	private void addJSPDependencies(ForgeHelper forgeHelper) {
 		forgeHelper.getForceDependencyInstaller().forceInstall(
 				DependencyBuilder.create().setGroupId("org.apache.tomcat.embed")
-						.setArtifactId("tomcat-embed-jasper").setScopeType("provided"));
+						.setArtifactId("tomcat-embed-jasper"));
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
