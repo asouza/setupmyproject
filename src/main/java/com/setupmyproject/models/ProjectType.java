@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 
+import com.setupmyproject.commands.spa.SpaStartCommand;
 import com.setupmyproject.controllers.*;
 import com.setupmyproject.wizards.*;
 import org.jboss.forge.addon.facets.FacetFactory;
@@ -211,7 +212,8 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
         public Map<Class<?>, Function<SetupState, Wizard>> steps() {
             Map<Class<?>, Function<SetupState, Wizard>> steps = new HashMap<>();
 
-            steps.put(ProjectTypeSetupController.class, (setupState) -> new WizardSpaSetup());
+            steps.put(ProjectTypeSetupController.class, (setupState) -> new WizardMavenSetup());
+            steps.put(MavenSetupController.class, (setupState) -> new WizardSpaSetup());
             steps.put(SpaOptionController.class, setupState -> new WizardBackendApiSetup());
             steps.put(BackendApiController.class, WizardPayment::new);
             return steps;
@@ -219,7 +221,7 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
 
         @Override
         public ProjectCommand getCommand() {
-            return new JAXRSBasicSetupCommand();
+            return new SpaStartCommand();
         }
 
         @Override

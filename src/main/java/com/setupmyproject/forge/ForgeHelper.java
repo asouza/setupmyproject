@@ -14,6 +14,7 @@ import org.jboss.forge.addon.facets.FacetFactory;
 import org.jboss.forge.addon.javaee.Configurable;
 import org.jboss.forge.addon.javaee.Descriptors;
 import org.jboss.forge.addon.javaee.faces.FacesFacet_2_2;
+import org.jboss.forge.addon.parser.java.facets.JavaSourceFacet;
 import org.jboss.forge.addon.projects.Project;
 import org.jboss.forge.addon.projects.ProjectFacet;
 import org.jboss.forge.addon.projects.dependencies.DependencyInstaller;
@@ -147,13 +148,16 @@ public class ForgeHelper {
 	public void copyFilesToCurrentProjectWebFolder(String filesBaseFolder,
 			String destinyWebFolder) {
 		WebResourcesFacet webFacet = project.getFacet(WebResourcesFacet.class);
+		FileResource<?> webDestinyFolder = webFacet
+				.getWebResource(destinyWebFolder);
+		copyFileToCurrentProjectFolder(filesBaseFolder, webDestinyFolder.getFullyQualifiedName());
+	}
+
+	public void copyFileToCurrentProjectFolder(String filesBaseFolder, String destinyFolder) {
 		try {
 			Path origem = Paths.get(ForgeHelper.class.getResource(
 					filesBaseFolder).toURI());
-			FileResource<?> webDestinyFolder = webFacet
-					.getWebResource(destinyWebFolder);
-
-			Path destiny = Paths.get(webDestinyFolder.getFullyQualifiedName());
+			Path destiny = Paths.get(destinyFolder);
 			Files.walkFileTree(origem, new FilesCopy(origem, destiny));
 		} catch (IOException | URISyntaxException e) {
 			throw new RuntimeException(e);
@@ -200,5 +204,10 @@ public class ForgeHelper {
 					.getEnvironmentAddon();
 		}
 		return serverEnvironmentAddon;
+	}
+
+	public FileResource<?> getProjectDirectory() {
+		JavaSourceFacet facet = project.getFacet(JavaSourceFacet.class);
+		return facet.getSourceDirectory().getParent().getParent().getParent();
 	}
 }

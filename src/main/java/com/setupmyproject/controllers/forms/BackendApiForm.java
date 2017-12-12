@@ -1,8 +1,10 @@
 package com.setupmyproject.controllers.forms;
 
 import com.setupmyproject.commands.ProjectCommand;
+import com.setupmyproject.commands.jaxrs.JAXRSBasicSetupCommand;
 import com.setupmyproject.models.BackendApi;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class BackendApiForm implements CommandGenerator {
 
     @Override
     public List<? extends ProjectCommand> createComand() {
-        return Collections.emptyList();
+        return Arrays.asList(new JAXRSBasicSetupCommand());
     }
 
     public BackendApi getOption() {
