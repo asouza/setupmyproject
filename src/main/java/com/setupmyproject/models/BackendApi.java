@@ -1,6 +1,8 @@
 package com.setupmyproject.models;
 
 import com.setupmyproject.commands.TimeToExecute;
+import com.setupmyproject.commands.jaxrs.JAXRSBasicSetupCommand;
+import com.setupmyproject.commands.springboot.SpringBootAPISetupCommand;
 import com.setupmyproject.components.ProjectCommandFormItem;
 import org.jboss.forge.addon.projects.Project;
 import org.jboss.forge.furnace.addons.AddonRegistry;
@@ -14,7 +16,7 @@ public enum BackendApi implements Tooltipable, ProjectCommandFormItem {
     SPRING_BOOT {
         @Override
         public void execute(Project project, AddonRegistry addonRegistry, CommandGeneratorsQuery commandGenerators) {
-
+            new SpringBootAPISetupCommand().execute(project, addonRegistry, commandGenerators);
         }
 
         @Override
@@ -30,7 +32,7 @@ public enum BackendApi implements Tooltipable, ProjectCommandFormItem {
     JAX_RS {
         @Override
         public void execute(Project project, AddonRegistry addonRegistry, CommandGeneratorsQuery commandGenerators) {
-
+            new JAXRSBasicSetupCommand().execute(project, addonRegistry, commandGenerators);
         }
 
         @Override
@@ -43,4 +45,9 @@ public enum BackendApi implements Tooltipable, ProjectCommandFormItem {
             return new TimeToExecute(1, TimeUnit.HOURS);
         }
     };
+
+    @Override
+    public String getNameKey() {
+        return "option." + name();
+    }
 }

@@ -14,7 +14,7 @@ public class BackendApiForm implements CommandGenerator {
 
     @Override
     public List<? extends ProjectCommand> createComand() {
-        return Arrays.asList(new JAXRSBasicSetupCommand());
+        return Arrays.asList(option);
     }
 
     public BackendApi getOption() {
