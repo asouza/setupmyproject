@@ -24,7 +24,7 @@ public class ProductResource {
 
 	@Path("/")
 	@GET
-	@Produces(value = { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces(value = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public List<Product> exampleGet() {
 		return products;
 	}
