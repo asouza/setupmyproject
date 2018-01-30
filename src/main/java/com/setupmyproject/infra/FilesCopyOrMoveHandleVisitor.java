@@ -25,7 +25,6 @@ public class FilesCopyOrMoveHandleVisitor extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        System.out.println(file);
         if (file.equals(target) && ignoreTarget){
             return FileVisitResult.SKIP_SUBTREE;
         }
