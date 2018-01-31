@@ -52,6 +52,7 @@ public class JAXRSBasicSetupCommand implements ProjectCommand {
 
 	private void createResourceConf(ForgeHelper forgeHelper,MavenSetupForm mavenForm) {
 		forgeHelper.getJavaSourceSaver().save("/templates/jaxrs/ApplicationConf.jv", mavenForm.packageFor("resources"));				
+		forgeHelper.getJavaSourceSaver().save("/templates/jaxrs/CorsFilter.jv", mavenForm.packageFor("resources"));
 	}
 
 	private void createClientsClasses(ForgeHelper forgeHelper,

@@ -24,16 +24,16 @@ public class ProductResource {
 
 	@Path("/")
 	@GET
-	@Produces(value = { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces(value = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public List<Product> exampleGet() {
 		return products;
 	}
 
 	@Path("/")
 	@POST
-	@Produces(value = { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces(value = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 	public Response create(Product product) throws URISyntaxException {
-		products.add(product);		
+		products.add(product);
 		return Response.created(new URI("products")).build();
 	}
 }

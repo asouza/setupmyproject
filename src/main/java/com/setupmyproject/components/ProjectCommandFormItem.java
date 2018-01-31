@@ -6,7 +6,7 @@ import com.setupmyproject.hacks.MessageSourceHolder;
 public interface ProjectCommandFormItem extends ProjectCommand,SpringFormListItem{
 	
 	@Override
-	public default String getLabel() {		
+	public default String getLabel() {
 		return MessageSourceHolder.getPageMessages().getMessage("option."+name());
 	}
 
