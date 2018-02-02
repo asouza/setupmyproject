@@ -48,6 +48,8 @@ public class GlobalExceptionHandler {
 			logger.error("Enviando mensagem de erro");
 			mailer.send(email);
 		});
+		
+		logger.error("logando exception", e);
 
 		return new ModelAndView("errors/500");
 	}
@@ -64,6 +66,8 @@ public class GlobalExceptionHandler {
 			logger.error("Enviando mensagem de erro");
 			mailer.send(email);
 		});
+		
+		logger.error("logando exception", e);
 
 		return new ModelAndView("errors/500-download");
 	}
