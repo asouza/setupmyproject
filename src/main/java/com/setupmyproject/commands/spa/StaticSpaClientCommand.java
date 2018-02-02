@@ -43,7 +43,7 @@ public class StaticSpaClientCommand {
     private void makeClientApiDirectoryProjectFrom(Path rootProjectDirectory) throws IOException, URISyntaxException {
         Path clientApiPath = Files.createDirectory(rootProjectDirectory.resolve("client-api"));
 
-        URI templatePath = ClassLoader.getSystemResource(this.templatePath).toURI();
+        URI templatePath = getClass().getClassLoader().getResource(this.templatePath).toURI();
 
         FilesCopyOrMoveHandleVisitor
                 .from(Paths.get(templatePath))
