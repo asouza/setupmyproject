@@ -32,6 +32,8 @@ public interface ProjectDefinition {
 	public Map<Class<?>, Function<SetupState,Wizard>> steps();
 	
 	public abstract ProjectCommand getCommand();
+
+	String name();
 	
 	@JsonIgnore
 	public default boolean isPayed() {

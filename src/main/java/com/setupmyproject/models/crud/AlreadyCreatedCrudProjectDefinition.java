@@ -54,6 +54,11 @@ public class AlreadyCreatedCrudProjectDefinition implements ProjectDefinition {
 	}
 
 	@Override
+	public String name() {
+		return projectType.name();
+	}
+
+	@Override
 	public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
 		return Optional.of(new AlreadyCreatedCrudProjectCrudConfiguration(
 				projectType.getCrudFrameworkConfiguration().get()));
