@@ -34,7 +34,7 @@ public class ExistingConfigurationForm implements HasProjectTypeDefinition {
 	@Override
 	@JsonIgnore
 	public ProjectDefinition getProjectDefinition() {
-		return new AlreadyCreatedCrudProjectDefinition(projectType);
+		return projectType;
 	}
 
 	@Override

@@ -36,7 +36,7 @@
 						</p>
 
 						<ul class="actions">
-							<li><a href="${spring:mvcUrl('setupTypeAction').build()}" class="button style3 big">Start now</a></li>
+							<li><a href="${spring:mvcUrl('startWizard').build()}" class="button style3 big">Start now</a></li>
 							<li>
 								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 								<input type="hidden" name="cmd" value="_donations">

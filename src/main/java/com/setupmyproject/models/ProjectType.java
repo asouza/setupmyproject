@@ -1,9 +1,12 @@
 package com.setupmyproject.models;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.setupmyproject.commands.spa.SpaStartCommand;
 import com.setupmyproject.controllers.*;
@@ -41,8 +44,7 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             steps.put(SpringSetupController.class, (setupState) -> new WizardJavaVersionSetup());
             steps.put(JavaSetupController.class, (setupState) -> new WizardJavaVersionSetup());
             steps.put(JavaSetupController.class, (setupState) -> new WizardDBSetup());
-            steps.put(DBSetupController.class, (setupState) -> new WizardCRUDSetup());
-            steps.put(CrudSetupController.class, (setupState) -> new WizardPayment(setupState));
+            steps.put(DBSetupController.class, (setupState) -> new WizardPayment(setupState));
             return steps;
 
         }
@@ -53,10 +55,9 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
         }
 
         @Override
-        public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
-            return Optional.of(new SpringMvcCrudConfiguration());
+        public boolean isAvailable() {
+            return false;
         }
-
     },
 
     SPRING_BOOT {
@@ -68,8 +69,7 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             steps.put(MavenSetupController.class, (setupState) -> new WizardSpringBootSetup());
             steps.put(SpringBootSetupController.class, (setupState) -> new WizardJavaVersionSetup());
             steps.put(JavaSetupController.class, (setupState) -> new WizardDBSetup());
-            steps.put(DBSetupController.class, (setupState) -> new WizardCRUDSetup());
-            steps.put(CrudSetupController.class, (setupState) -> new WizardPayment(setupState));
+            steps.put(DBSetupController.class, WizardPayment::new);
             return steps;
 
         }
@@ -80,10 +80,6 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             return new SpringBootSetupCommand();
         }
 
-        @Override
-        public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
-            return ProjectType.SPRING.getCrudFrameworkConfiguration();
-        }
 
     },
 
@@ -98,8 +94,7 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             steps.put(DBSetupController.class, (setupState) -> new WizardJavaEESetup());
             steps.put(JavaEESetupController.class, (setupState) -> new WizardDeltaSpike());
             steps.put(DeltaSpikeSetupController.class, (setupState) -> new WizardServerEnvironmentSetup());
-            steps.put(ServerEnvironmentController.class, (setupState) -> new WizardCRUDSetup());
-            steps.put(CrudSetupController.class, (setupState) -> new WizardPayment(setupState));
+            steps.put(ServerEnvironmentController.class, (setupState) -> new WizardPayment(setupState));
             return steps;
         }
 
@@ -115,10 +110,6 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             facetFactory.install(project, FacesFacet_2_2.class);
         }
 
-        @Override
-        public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
-            return Optional.of(new JSFCrudConfiguration());
-        }
     },
     VRAPTOR {
         @Override
@@ -135,8 +126,7 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             steps.put(JavaSetupController.class, (setupState) -> new WizardDBSetup());
             steps.put(DBSetupController.class, (setupState) -> new WizardVRaptorSetup());
             steps.put(VRaptorSetupController.class, (setupState) -> new WizardServerEnvironmentSetup());
-            steps.put(ServerEnvironmentController.class, (setupState) -> new WizardCRUDSetup());
-            steps.put(CrudSetupController.class, (setupState) -> new WizardPayment(setupState));
+            steps.put(ServerEnvironmentController.class, (setupState) -> new WizardPayment(setupState));
             return steps;
         }
 
@@ -152,10 +142,6 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
             facetFactory.install(project, ValidationFacet.class);
         }
 
-        @Override
-        public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
-            return Optional.of(new VRaptorCrudConfiguration());
-        }
     },
     VAADIN {
         @Override
@@ -201,10 +187,6 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
         public void prepareFacets(FacetFactory facetFactory, Project project) {
         }
 
-        @Override
-        public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
-            return Optional.empty();
-        }
     },
 
     SPA {
@@ -228,10 +210,11 @@ public enum ProjectType implements SpringFormListItem, Tooltipable, ProjectDefin
         public void prepareFacets(FacetFactory facetFactory, Project project) {
         }
 
-        @Override
-        public Optional<ChoosenFrameworkCrudConfiguration> getCrudFrameworkConfiguration() {
-            return Optional.empty();
-        }
     };
+
+
+    public static List<ProjectType> allAvailables(){
+        return Stream.of(ProjectType.values()).filter(ProjectDefinition::isAvailable).collect(Collectors.toList());
+    }
 
 }

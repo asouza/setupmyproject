@@ -67,5 +67,9 @@ public interface ProjectDefinition {
 						+ this);
 		return nextWizard.getModelAndView(applicationContext);
 
-	}	
+	}
+
+	default boolean isAvailable(){
+		return true;
+	}
 }

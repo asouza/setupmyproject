@@ -107,16 +107,7 @@ public class SetupStateTest {
 		ProjectDefinition projectType = setupState.getProjectType();
 		Assert.assertEquals(ProjectType.SPRING, projectType);
 	}
-	
-	@Test
-	public void shouldGetProjectType2(){
-		ExistingConfigurationForm existingConfigurationForm = new ExistingConfigurationForm();
-		existingConfigurationForm.setProjectType(ProjectType.SPRING);
-		setupState.addConf(existingConfigurationForm,(s) -> {return null;});
-		
-		ProjectDefinition projectType = setupState.getProjectType();
-		Assert.assertEquals(AlreadyCreatedCrudProjectDefinition.class, projectType.getClass());
-	}
+
 	
 	@Test(expected=IllegalStateException.class)
 	public void shouldNotAcceptMoreThanOneHasProjectDefinition(){

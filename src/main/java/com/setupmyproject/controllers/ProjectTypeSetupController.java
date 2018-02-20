@@ -34,7 +34,7 @@ public class ProjectTypeSetupController {
 	private ModelAndView formModelAndView(ConfigurationForm configurationForm) {
 		ModelAndView modelAndView = new ModelAndView("setup");
 		modelAndView.addObject("configurationForm", configurationForm);
-		modelAndView.addObject("projectTypes",ProjectType.values());
+		modelAndView.addObject("projectTypes",ProjectType.allAvailables());
 		return modelAndView;
 	}
 	
