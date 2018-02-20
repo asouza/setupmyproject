@@ -34,7 +34,8 @@ public class ReportController {
     public Map<String, Integer> allBsons(){
         return reportDao.allBsons().stream()
                 .map(SetupState::new)
-                .map(SetupState::getProjectType).collect(Collectors.groupingBy(ProjectDefinition::name))
+                .map(SetupState::getProjectType)
+                .collect(Collectors.groupingBy(ProjectDefinition::name))
                 .entrySet()
                 .stream()
                 .collect(Collectors.toMap(Map.Entry::getKey, v -> v.getValue().size() ));
