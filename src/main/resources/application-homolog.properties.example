@@ -3,12 +3,6 @@
 #s� coloca o caminho a partir do seu usu�rio. 
 forge.path = ambiente/forge/forge-distribution-2.13.0.Final/addons
 
-#paypal
-paypal.env=sandbox
-paypal.merchant_id=alots.ssa-facilitator@gmail.com
-paypal.receiver_email=seller@paypalsandbox.com
-paypal.currency=BRL
-
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.username=root
 spring.datasource.password=
